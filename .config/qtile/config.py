@@ -26,7 +26,7 @@ mod1 = "Alt"
 mod = "mod4"
 myBrowser = "chromium"
 myTerm = "alacritty"
-
+###
 ### KEYBINDINGS ###
 keys = [
         #ESSENTIALS
