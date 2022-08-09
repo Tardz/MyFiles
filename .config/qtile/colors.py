@@ -1,5 +1,5 @@
 ### DARK MODE ###
-transp = '#99000000'
+transp = '#00000000'
 bg = '#282828'
 red = '#cc241d'
 green = '#98971a'
@@ -37,14 +37,12 @@ fg3 = '#ebdbb2'
 fg4 = '#fbf1c7'
 fg5 = '#fbf1c7'
 
-### LIGHT MODE ###
-
 gruvbox = {
         ### VARIABLES ###
         # BAR #
         'arrow1':            purple,
         'arrow2':            blue,
-        'background':        bg0,
+        'background':        transp,
         'bartext':           '#ffffff',
         
         # LAYOUTS #
