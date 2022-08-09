@@ -77,8 +77,8 @@ keys = [
         Key([mod], "n", lazy.spawn("/home/jonalm/scripts/term/nnn.sh"), desc='nnn'),
         Key([mod], "h", lazy.spawn("/home/jonalm/scripts/term/htop.sh"), desc='htop'),
         KeyChord([mod], "g",
-                 [Key([], "p", lazy.spawn("/home/jonalm/scripts/term/gitpush.sh"), desc='Github upload')],
-                 [Key([], "g", lazy.spawn("/home/jonalm/scripts/url/github.sh"), desc='Github')]),
+                 [Key([], "p", lazy.spawn("/home/jonalm/scripts/term/gitpush.sh"), desc='Github upload'),
+                  Key([], "g", lazy.spawn("/home/jonalm/scripts/url/github.sh"), desc='Github')]),
 
         #DMENU
         Key([mod], "space", lazy.run_extension(DmenuRun(
