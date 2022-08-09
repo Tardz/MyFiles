@@ -71,13 +71,14 @@ keys = [
         Key([mod], "y", lazy.spawn("/home/jonalm/scripts/url/youtube.sh"), desc='Youtube'),
         Key([mod], "t", lazy.spawn("/home/jonalm/scripts/url/tradingview.sh"), desc='Tradingview'),
         Key([mod], "b", lazy.spawn("/home/jonalm/scripts/url/swedbank.sh"), desc='Swedbank'),
+        Key([mod], "g", lazy.spawn("/home/jonalm/scripts/url/github.sh"), desc='Github'),
 
         #TERM
         Key([mod], "n", lazy.spawn("/home/jonalm/scripts/term/nnn.sh"), desc='nnn'),
         Key([mod], "h", lazy.spawn("/home/jonalm/scripts/term/htop.sh"), desc='htop'),
-        KeyChord([mod], "g",
-                 [Key([], "g", lazy.spawn("/home/jonalm/scripts/url/github.sh"), desc='Github')],
-                 [Key([], "p", lazy.spawn("/home/jonalm/scripts/term/gitpush.sh"), desc='Github upload')]),
+        KeyChord(["control"], "g",
+                 [Key([], "p", lazy.spawn("/home/jonalm/scripts/term/gitpush.sh"), desc='Github upload')],
+                 [Key([], "s", lazy.spawn("/home/jonalm/scripts/url/gitstatus.sh"), desc='Git status')]),
 
         #DMENU
         Key([mod], "space", lazy.run_extension(DmenuRun(
