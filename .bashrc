@@ -21,4 +21,3 @@ alias reboot='sudo reboot'
 alias shutdown='sudo shutdown now'
 alias rm='sudo rm -r'
 alias nnn='nnn -d -e -H -r'
-alias gg="git status"
