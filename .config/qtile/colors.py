@@ -3,15 +3,25 @@ transp1 = '#00000000'
 transp2 = '#99000000'
 transp3 = '#00000000'
 
+text = '#ffffff'
+text2 = '#000000'
+
 bg = '#282828'
 red = '#cc241d'
+red2 = '#EA738DFF'
 green = '#98971a'
 yellow = '#d79921'
 blue = '#458588'
+blue2 = '#89ABE3FF'
+blue3 = '#008080'
+blue4 = '#2F4F4F'
 purple = '#b16286'
+purple2 = '#a9a1e1'
 aqua = '#689d61'
 gray = '#928374'
 orange= '#d65d0e'
+olive = '#E7E8D1'
+teal = '#A7BEAE'
 
 lightgray = '#a89984'
 lightred = '#fb4934'
@@ -43,10 +53,10 @@ fg5 = '#fbf1c7'
 gruvbox = {
         ### VARIABLES ###
         # BAR #
-        'arrow1':            purple,
-        'arrow2':            blue,
+        'arrow1':            blue,
+        'arrow2':            purple,
         'background':        bg0,
-        'bartext':           '#ffffff',
+        'bartext':           text,
         
         # LAYOUTS #
         'windowoutline':     bg5,
