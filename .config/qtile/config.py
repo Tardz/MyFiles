@@ -60,9 +60,10 @@ keys = [
         Key([mod], "e", lazy.spawn("/usr/bin/emacs"), desc='Emacs'),
         Key([mod], "comma", lazy.spawn("/usr/bin/nm-connection-editor"), desc='NewtorkManager'),
         Key([mod], "o", lazy.spawn("/usr/bin/virtualbox"), desc='Virtualbox'),
+        Key([mod], "r", lazy.spawn("/usr/bin/ticktick"), desc='Ticktick'),
+        Key([mod], "i", lazy.spawn("/usr/bin/code"), desc='VScode'),
 
         #URL
-        Key([mod], "r", lazy.spawn("/home/jonalm/scripts/url/ticktick.sh"), desc='Ticktick'),
         Key([mod], "a", lazy.spawn("/home/jonalm/scripts/url/avanza.sh"), desc='Avanza'),
         Key([mod], "v", lazy.spawn("/home/jonalm/scripts/url/ig.sh"), desc='Ig'),
         Key([mod], "p", lazy.spawn("/home/jonalm/scripts/url/lastpass.sh"), desc='Lastpass'),
