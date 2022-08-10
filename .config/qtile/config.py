@@ -55,12 +55,8 @@ keys = [
         #APPS
         Key([mod], "c", lazy.spawn(myBrowser), desc='Chromium'),
         Key([mod], "d", lazy.spawn("/usr/bin/discord"), desc='Discord'),
-        Key([mod], "s", lazy.spawn("/usr/bin/spotify"), desc='Spotify'),
-        Key([mod], "period", lazy.spawn("/usr/bin/pavucontrol"), desc='Pavucontrol'),
         Key([mod], "e", lazy.spawn("/usr/bin/emacs"), desc='Emacs'),
-        Key([mod], "comma", lazy.spawn("/usr/bin/nm-connection-editor"), desc='NewtorkManager'),
         Key([mod], "o", lazy.spawn("/usr/bin/virtualbox"), desc='Virtualbox'),
-        Key([mod], "r", lazy.spawn("/usr/bin/ticktick"), desc='Ticktick'),
         Key([mod], "i", lazy.spawn("/usr/bin/code"), desc='VScode'),
 
         #URL
@@ -75,7 +71,6 @@ keys = [
         Key([mod], "g", lazy.spawn("/home/jonalm/scripts/url/github.sh"), desc='Github'),
 
         #TERM
-        Key([mod], "n", lazy.spawn("/home/jonalm/scripts/term/nnn.sh"), desc='nnn'),
         Key([mod], "h", lazy.spawn("/home/jonalm/scripts/term/htop.sh"), desc='htop'),
         KeyChord([mod], "g",
                  [Key([], "p", lazy.spawn("/home/jonalm/scripts/term/gitpush.sh"), desc='Git push'),
@@ -94,7 +89,7 @@ keys = [
         selected_foreground=gruvbox["dmenuselfg"],
         selected_background=gruvbox["dmenubg"],
         ))),
-        ] 
+        ]
 
 ### GROUP SETTINGS ###
 groups = [
@@ -102,10 +97,27 @@ groups = [
         Group('Right', label="", matches=[Match(wm_class='chromium'), Match(wm_class='/usr/bin/spotify'),  Match(wm_class='/usr/bin/discord')], layout="monadtall"),
 ]
 
+### SCRATCHPAD ###
+groups.append(ScratchPad('2', [
+    DropDown('mixer', 'pavucontrol', width=0.4, height=0.4, x=0.3, y=0.25, opacity=1),
+    DropDown('net', 'nm-connection-editor', width=0.4, height=0.4, x=0.3, y=0.25, opacity=1),
+    DropDown('nnn', 'alacritty -e nnn -d -e -H -r', width=0.4, height=0.6, x=0.3, y=0.18, opacity=1),
+    DropDown('music', 'spotify', width=0.7, height=0.8, x=0.15, y=0.1, opacity=1),
+    DropDown('todo', 'ticktick', width=0.7, height=0.8, x=0.15, y=0.1, opacity=1)
+]))
+
 ### MOVE WINDOW TO WORKSPACE ###
 for i in groups:
     keys.extend([
+        #WINDOWS
         Key([mod, "shift"], i.name, lazy.window.togroup(i.name),desc="move focused window to group {}".format(i.name)),
+
+        #SCRATCHPAD
+        Key([mod], "period", lazy.group['2'].dropdown_toggle('mixer')),
+        Key([mod], "comma", lazy.group['2'].dropdown_toggle('net')),
+        Key([mod], "n", lazy.group['2'].dropdown_toggle('nnn')),
+        Key([mod], "s", lazy.group['2'].dropdown_toggle('music')),
+        Key([mod], "r", lazy.group['2'].dropdown_toggle('todo')),
         ])
 
 ### LAYOUT SETTINGS ###
