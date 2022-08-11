@@ -17,6 +17,8 @@ neofetch
 ### ALIAS ###
 alias ll='ls -alF'
 alias pacman='sudo pacman'
+alias pac='pacman -R $(pacman -Qtdq)'
+alias pacs='pacman -Qtdq'
 alias reboot='sudo reboot'
 alias shutdown='sudo shutdown now'
 alias rm='sudo rm -r'

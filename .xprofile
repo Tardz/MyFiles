@@ -14,4 +14,5 @@ picom &
 emacs --daemon &
 openrazer-daemon
 imwheel -b 45 &
+nm-applet &
 #alacritty -e alttab
