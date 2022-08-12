@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ### DISPLAY CONF ###
 xrandr --output DVI-D-1  --mode 1920x1080 --rate 144
 xrandr --output HDMI-1 --mode 1920x1080 --rate 144
@@ -15,4 +17,7 @@ emacs --daemon &
 openrazer-daemon
 imwheel -b 45 &
 nm-applet &
+polychromatic-tray-applet &
+blueman-applet &
+#discord --start-minimized
 #alacritty -e alttab

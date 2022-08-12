@@ -101,6 +101,7 @@ groups = [
 groups.append(ScratchPad('2', [
     DropDown('mixer', 'pavucontrol', width=0.4, height=0.4, x=0.3, y=0.25, opacity=1),
     DropDown('net', 'nm-connection-editor', width=0.4, height=0.4, x=0.3, y=0.25, opacity=1),
+    DropDown('bluetooth', 'blueman-manager', width=0.4, height=0.4, x=0.3, y=0.25, opacity=1),
     DropDown('nnn', 'alacritty -e nnn -d -e -H -r', width=0.4, height=0.6, x=0.3, y=0.18, opacity=1),
     DropDown('music', 'spotify', width=0.7, height=0.8, x=0.15, y=0.1, opacity=1),
     DropDown('todo', 'ticktick', width=0.7, height=0.8, x=0.15, y=0.1, opacity=1)
@@ -118,6 +119,7 @@ for i in groups:
         Key([mod], "n", lazy.group['2'].dropdown_toggle('nnn')),
         Key([mod], "s", lazy.group['2'].dropdown_toggle('music')),
         Key([mod], "r", lazy.group['2'].dropdown_toggle('todo')),
+        Key([mod], "x", lazy.group['2'].dropdown_toggle('bluetooth')),
         ])
 
 ### LAYOUT SETTINGS ###
@@ -127,15 +129,15 @@ layouts = [
         border_focus=gruvbox['windowfocus1'],
         border_width=2,
         num_stacks=1,
-        margin=7,
+        margin=6,
     ),
     MonadTall(
         border_normal=gruvbox['windowoutline'],
         border_focus=gruvbox['windowfocus0'],
-        margin=7,
+        margin=6,
         border_width=2,
         single_border_width=2,
-        single_margin=7,
+        single_margin=6,
     )
 ]
 
@@ -170,7 +172,7 @@ widget_defaults = dict(
 extension_defaults = widget_defaults.copy()
 
 ### DECLARING PANEL ###
-screens = [Screen(top=bar), Screen(top=bar2)]  
+screens = [Screen(top=bar), Screen(top=bar2)]
 
 ### OTHER QTILE SETTINGS ###
 dgroups_key_binder = None
@@ -182,5 +184,10 @@ auto_fullscreen = True
 focus_on_window_activation = "smart"
 reconfigure_screens = True
 auto_minimize = True
-wmname = "LG3D"
 
+@hook.subscribe.startup_once
+def autostart():
+    home = os.path.expanduser('~/.config/qtile/autostart.sh')
+    subprocess.call([home])
+
+wmname = "LG3D"

@@ -68,14 +68,13 @@ bar2 = Bar([
     left_arrow(gruvbox['arrow1'], gruvbox['arrow2']),
     Clock(background=gruvbox['arrow2'], foreground=gruvbox['bartext'], format=' %Y-%m-%d %R'),
 
-    left_arrow(gruvbox['arrow2'], gruvbox['arrow1']),
-    Systray(background=gruvbox['arrow1']),
-    CheckUpdates(display_format="  {updates}" ,background=gruvbox['arrow2'], foreground=gruvbox['bartext']),
-    Bluetooth(),
-    Volume(background=gruvbox['arrow1'], foreground=gruvbox['bartext']),
-    Spacer(background=gruvbox['arrow1'], length=1),
-    Sep(background=gruvbox['arrow1'], foreground=gruvbox['bartext'], size_percent=55),
-    QuickExit(countdown_format='', countdown_start=1, default_text='', background=gruvbox['arrow1'], foreground=gruvbox['bartext']),
-    Spacer(length=5, background=gruvbox['arrow1'])
+    left_arrow(gruvbox['arrow2'], gruvbox['arrow3']),
+    Systray(background=gruvbox['arrow3']),
+    CheckUpdates(display_format="  {updates}" ,background=gruvbox['arrow3'], foreground=gruvbox['bartext']),
+    #Volume(background=gruvbox['arrow3'], foreground=gruvbox['bartext']),
+    Spacer(background=gruvbox['arrow3'], length=11),
+    Sep(background=gruvbox['arrow3'], foreground=gruvbox['sep'], size_percent=60, linewidth=1),
+    QuickExit(countdown_format='', countdown_start=1, default_text='', background=gruvbox['arrow3'], foreground=gruvbox['bartext']),
+    Spacer(length=5, background=gruvbox['arrow3'])
 
     ], background=gruvbox['background'], size=24, margin=0, opacity=0.95)
