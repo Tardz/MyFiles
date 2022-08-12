@@ -129,15 +129,15 @@ layouts = [
         border_focus=gruvbox['windowfocus1'],
         border_width=2,
         num_stacks=1,
-        margin=6,
+        margin=10,
     ),
     MonadTall(
         border_normal=gruvbox['windowoutline'],
         border_focus=gruvbox['windowfocus0'],
-        margin=6,
+        margin=10,
         border_width=2,
         single_border_width=2,
-        single_margin=6,
+        single_margin=10,
     )
 ]
 
