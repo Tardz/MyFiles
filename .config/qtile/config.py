@@ -11,6 +11,7 @@ from libqtile.extension.command_set import CommandSet
 
 from libqtile.layout.ratiotile import RatioTile
 from libqtile.layout.columns import Columns
+from libqtile.layout.xmonad import MonadWide
 from libqtile.layout.xmonad import MonadTall
 from libqtile.layout.stack import Stack
 from libqtile.layout.floating import Floating
@@ -93,8 +94,8 @@ keys = [
 
 ### GROUP SETTINGS ###
 groups = [
-        Group('Left', label="", matches=[Match(wm_class=myTerm), Match(wm_class='/usr/bin/emacs')], layout="monadtall"),
-        Group('Right', label="", matches=[Match(wm_class='chromium'), Match(wm_class='/usr/bin/spotify'),  Match(wm_class='/usr/bin/discord')], layout="monadtall"),
+        Group('Left', label="", matches=[Match(wm_class='chromium'), Match(wm_class='/usr/bin/spotify'),  Match(wm_class='/usr/bin/discord')], layout="monadtall"),
+        Group('Right', label="", matches=[Match(wm_class=myTerm), Match(wm_class='/usr/bin/emacs')], layout="monadwide"),
 ]
 
 ### SCRATCHPAD ###
@@ -124,6 +125,13 @@ for i in groups:
 
 ### LAYOUT SETTINGS ###
 layouts = [
+    MonadWide(
+        border_normal=gruvbox['windowoutline'],
+        border_focus=gruvbox['windowfocus1'],
+        border_width=2,
+        num_stacks=1,
+        margin=10,
+    ),
     Stack(
         border_normal=gruvbox['windowoutline'],
         border_focus=gruvbox['windowfocus1'],
