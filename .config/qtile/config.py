@@ -20,7 +20,8 @@ from libqtile.config import Click, Drag, KeyChord, DropDown, Group, Key, Match, 
 from libqtile.lazy import lazy
 
 from colors import gruvbox
-from bar import bar, bar2
+#from bar import bar, bar2
+from bar_vertical import bar, bar2
 
 mod1 = "Alt"
 mod = "mod4"
