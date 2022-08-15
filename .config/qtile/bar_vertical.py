@@ -110,6 +110,8 @@ bar = Bar([
         gruvbox['arrow1']
     ),
 
+    Spacer(length=8),
+
     TaskList(
         padding=3,
         highlight_method='block',
@@ -149,6 +151,7 @@ bar = Bar([
 
     GroupBox(
         disable_drag=True,
+        visible_groups=['Left', '4', '6', '8'],
         active=gruvbox['groupboxactive'],
         inactive=gruvbox['groupboxinactive'],
         highlight_method='line',
@@ -169,6 +172,7 @@ bar = Bar([
 bar2 = Bar([
     GroupBox(
         disable_drag=True,
+        visible_groups=['Right', '3', '5', '7'],
         active=gruvbox['groupboxactive'],
         inactive=gruvbox['groupboxinactive'],
         highlight_method='line',

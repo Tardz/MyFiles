@@ -37,9 +37,11 @@ keys = [
         Key([mod, "shift"], "r", lazy.restart(), desc='Restart Qtile'),
         Key([mod, "shift"], "q",lazy.shutdown(), desc='Shutdown Qtile'),
 
-        #SWITCH MONITOR FOCUS
+        #SWITCH MONITOR FOCUS AND GROUPS
         Key([mod], "Left", lazy.to_screen(0), desc='Move focus to next monitor'),
         Key([mod], "Right", lazy.to_screen(1), desc='Move focus to next monitor'),
+        Key(["mod1", "control"], "Right", lazy.screen.next_group(), desc='Next group'),
+        Key(["mod1", "control"], "Left", lazy.screen.prev_group(), desc='Next group'),
 
         #WINDWOW CONTROLS
         Key([mod], "Down", lazy.layout.down(), desc='Move focus down in current stack pane'),
@@ -53,6 +55,7 @@ keys = [
         Key([mod], "f", lazy.window.toggle_floating(), desc='toggle floating'),
         Key([mod, "shift"], "f", lazy.window.toggle_fullscreen(), desc='toggle fullscreen'),
         Key([mod], "z", lazy.window.toggle_minimize(), lazy.group.next_window(), desc="Minimize window"),
+
 
         #APPS
         Key([mod], "c", lazy.spawn(myBrowser), desc='Chromium'),
@@ -95,8 +98,14 @@ keys = [
 
 ### GROUP SETTINGS ###
 groups = [
-        Group('Left', label="", matches=[Match(wm_class='chromium'), Match(wm_class='/usr/bin/spotify'),  Match(wm_class='/usr/bin/discord')], layout="monadtall"),
-        Group('Right', label="", matches=[Match(wm_class=myTerm), Match(wm_class='/usr/bin/emacs')], layout="monadwide"),
+        Group('Left', label="", matches=[Match(wm_class='chromium'), Match(wm_class='spotify'),  Match(wm_class='/usr/bin/discord')], layout="monadtall"),
+        Group('4', label="", layout="monadtall"),
+        Group('6', label="", layout="monadtall"),
+        Group('8', label="", layout="monadtall"),
+        Group('Right', label="", matches=[Match(wm_class='/usr/bin/emacs')]),
+        Group('3', label="", layout="monadwide"),
+        Group('5', label="", layout="monadwide"),
+        Group('7', label="", layout="monadwide"),
 ]
 
 ### SCRATCHPAD ###
@@ -114,6 +123,7 @@ for i in groups:
     keys.extend([
         #WINDOWS
         Key([mod, "shift"], i.name, lazy.window.togroup(i.name),desc="move focused window to group {}".format(i.name)),
+        #Key([mod], i.name, lazy.group[i.name].toscreen(), desc="Switch to group {}".format(i.name)),
 
         #SCRATCHPAD
         Key([mod], "period", lazy.group['2'].dropdown_toggle('mixer')),
@@ -122,7 +132,7 @@ for i in groups:
         Key([mod], "s", lazy.group['2'].dropdown_toggle('music')),
         Key([mod], "r", lazy.group['2'].dropdown_toggle('todo')),
         Key([mod], "x", lazy.group['2'].dropdown_toggle('bluetooth')),
-        ])
+    ])
 
 ### LAYOUT SETTINGS ###
 layouts = [
@@ -187,7 +197,7 @@ screens = [Screen(top=bar), Screen(top=bar2)]
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: List
 follow_mouse_focus = True
-bring_front_click = ''
+bring_front_click = True
 cursor_warp = False
 auto_fullscreen = True
 focus_on_window_activation = "smart"
