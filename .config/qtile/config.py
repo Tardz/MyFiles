@@ -115,7 +115,7 @@ groups.append(ScratchPad('2', [
     DropDown('passwords', '/home/jonalm/.webcatalog/LastPass/LastPass', width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
     DropDown('mail', 'thunderbird', width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
     DropDown('github', '/home/jonalm/.webcatalog/GitHub/GitHu', width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
-    DropDown('githubPush', 'alacritty -e /home/jonalm/scripts/term/gitpush.sh', width=0.4, height=0.4, x=0.3, y=0.25, opacity=1)
+    DropDown('githubPush', '/home/jonalm/scripts/term/gitpush.sh', width=0.4, height=0.4, x=0.3, y=0.25, opacity=1)
 ]))
 
 ### MOVE WINDOW TO WORKSPACE ###
