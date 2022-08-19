@@ -62,7 +62,6 @@ keys = [
         Key([mod], "e", lazy.spawn("/usr/bin/emacs"), desc='Emacs'),
         Key([mod], "o", lazy.spawn("/usr/bin/virtualbox"), desc='Virtualbox'),
         Key([mod], "i", lazy.spawn("/usr/bin/code"), desc='VScode'),
-        Key([mod], "k", lazy.spawn("/home/jonalm/.webcatalog/TimeTree/TimeTree"), desc='Timetree'),
 
         #URL
         Key([mod], "a", lazy.spawn("/home/jonalm/scripts/url/avanza.sh"), desc='Avanza'),
@@ -70,13 +69,12 @@ keys = [
         Key([mod], "y", lazy.spawn("/home/jonalm/scripts/url/youtube.sh"), desc='Youtube'),
         Key([mod], "t", lazy.spawn("/home/jonalm/scripts/url/tradingview.sh"), desc='Tradingview'),
         Key([mod], "b", lazy.spawn("/home/jonalm/scripts/url/swedbank.sh"), desc='Swedbank'),
-        Key([mod], "g", lazy.spawn("/home/jonalm/scripts/url/github.sh"), desc='Github'),
 
         #TERM
         Key([mod], "h", lazy.spawn("/home/jonalm/scripts/term/htop.sh"), desc='htop'),
-        KeyChord([mod], "g",
-                 [Key([], "p", lazy.spawn("/home/jonalm/scripts/term/gitpush.sh"), desc='Git push'),
-                  Key([], "g", lazy.spawn("/home/jonalm/scripts/url/github.sh"), desc='Github')]),
+       # KeyChord([mod], "g",
+       #          [Key([], "p", lazy.spawn("/home/jonalm/scripts/term/gitpush.sh"), desc='Git push'),
+       #           Key([], "g", lazy.spawn("/home/jonalm/.webcatalog/GitHub/GitHub"), desc='Github')]),
 
         #DMENU
         Key([mod], "space", lazy.run_extension(DmenuRun(
@@ -115,7 +113,9 @@ groups.append(ScratchPad('2', [
     DropDown('todo', 'ticktick', width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
     DropDown('calender', '/home/jonalm/.webcatalog/TimeTree/TimeTree', width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
     DropDown('passwords', '/home/jonalm/.webcatalog/LastPass/LastPass', width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
-    DropDown('mail', 'thunderbird', width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95)
+    DropDown('mail', 'thunderbird', width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
+    DropDown('github', '/home/jonalm/.webcatalog/GitHub/GitHu', width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
+    DropDown('githubPush', '/home/jonalm/scripts/term/gitpush.sh', width=0.4, height=0.4, x=0.3, y=0.25, opacity=1)
 ]))
 
 ### MOVE WINDOW TO WORKSPACE ###
@@ -135,6 +135,10 @@ for i in groups:
         Key([mod], "k", lazy.group['2'].dropdown_toggle('calender')),
         Key([mod], "p", lazy.group['2'].dropdown_toggle('passwords')),
         Key([mod], "m", lazy.group['2'].dropdown_toggle('mail')),
+        KeyChord([mod], "g",
+                 [Key([], "p", lazy.group['2'].dropdown_toggle('githubPush')),
+                  Key([], "g", lazy.group['2'].dropdown_toggle('github'))]),
+
     ])
 
 ### LAYOUT SETTINGS ###
