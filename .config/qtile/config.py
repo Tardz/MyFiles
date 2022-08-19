@@ -33,9 +33,9 @@ keys = [
         #ESSENTIALS
         Key([mod], "Return", lazy.spawn(myTerm), desc='Launches My Terminal'),
         Key([mod], "Tab", lazy.next_layout(), desc='Toggle through layouts'),
-        Key([mod], "q",lazy.window.kill(), desc='Kill active window'),
+        Key([mod], "q", lazy.window.kill(), desc='Kill active window'),
         Key([mod, "shift"], "r", lazy.restart(), desc='Restart Qtile'),
-        Key([mod, "shift"], "q",lazy.shutdown(), desc='Shutdown Qtile'),
+        Key([mod, "shift"], "q", lazy.shutdown(), desc='Shutdown Qtile'),
 
         #SWITCH MONITOR FOCUS AND GROUPS
         Key([mod], "Left", lazy.to_screen(0), desc='Move focus to next monitor'),
@@ -47,7 +47,7 @@ keys = [
         Key([mod], "Down", lazy.layout.down(), desc='Move focus down in current stack pane'),
         Key([mod], "Up", lazy.layout.up(), desc='Move focus up in current stack pane'),
         Key([mod, "shift"], "Down", lazy.layout.shuffle_down(), lazy.layout.section_down(), desc='Move windows down in current stack'),
-        Key([mod, "shift"], "Up",lazy.layout.shuffle_up(), lazy.layout.section_up(), desc='Move windows up in current stack'),
+        Key([mod, "shift"], "Up", lazy.layout.shuffle_up(), lazy.layout.section_up(), desc='Move windows up in current stack'),
         Key([mod, "control"], "Left", lazy.layout.shrink(), lazy.layout.decrease_nmaster(), desc='Shrink window (MonadTall), decrease number in master pane (Tile)'),
         Key([mod, "control"], "Right", lazy.layout.grow(), lazy.layout.increase_nmaster(), desc='Expand window (MonadTall), increase number in master pane (Tile)'),
         Key([mod, "control"], "n", lazy.layout.normalize(), desc='normalize window size ratios'),
@@ -72,9 +72,6 @@ keys = [
 
         #TERM
         Key([mod], "h", lazy.spawn("/home/jonalm/scripts/term/htop.sh"), desc='htop'),
-       # KeyChord([mod], "g",
-       #          [Key([], "p", lazy.spawn("/home/jonalm/scripts/term/gitpush.sh"), desc='Git push'),
-       #           Key([], "g", lazy.spawn("/home/jonalm/.webcatalog/GitHub/GitHub"), desc='Github')]),
 
         #DMENU
         Key([mod], "space", lazy.run_extension(DmenuRun(
@@ -183,8 +180,8 @@ floating_layout = Floating(
 
 #DRAG FLOATING LAYOUTS
 mouse = [
-    Drag([mod], "Button1", lazy.window.set_position_floating(),start=lazy.window.get_position()),
-    Drag([mod], "Button3", lazy.window.set_size_floating(),start=lazy.window.get_size()),
+    Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
+    Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
     Click([mod], "Button2", lazy.window.bring_to_front())
     ]
 
