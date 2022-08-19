@@ -56,20 +56,17 @@ keys = [
         Key([mod, "shift"], "f", lazy.window.toggle_fullscreen(), desc='toggle fullscreen'),
         Key([mod], "z", lazy.window.toggle_minimize(), lazy.group.next_window(), desc="Minimize window"),
 
-
         #APPS
         Key([mod], "c", lazy.spawn(myBrowser), desc='Chromium'),
         Key([mod], "d", lazy.spawn("/usr/bin/discord"), desc='Discord'),
         Key([mod], "e", lazy.spawn("/usr/bin/emacs"), desc='Emacs'),
         Key([mod], "o", lazy.spawn("/usr/bin/virtualbox"), desc='Virtualbox'),
         Key([mod], "i", lazy.spawn("/usr/bin/code"), desc='VScode'),
+        Key([mod], "k", lazy.spawn("/home/jonalm/.webcatalog/TimeTree/TimeTree"), desc='Timetree'),
 
         #URL
         Key([mod], "a", lazy.spawn("/home/jonalm/scripts/url/avanza.sh"), desc='Avanza'),
         Key([mod], "v", lazy.spawn("/home/jonalm/scripts/url/ig.sh"), desc='Ig'),
-        Key([mod], "p", lazy.spawn("/home/jonalm/scripts/url/lastpass.sh"), desc='Lastpass'),
-        Key([mod], "k", lazy.spawn("/home/jonalm/scripts/url/gmail.sh"), desc='Outlook'),
-        Key([mod], "m", lazy.spawn("/home/jonalm/scripts/url/outlook.sh"), desc='Gail'),
         Key([mod], "y", lazy.spawn("/home/jonalm/scripts/url/youtube.sh"), desc='Youtube'),
         Key([mod], "t", lazy.spawn("/home/jonalm/scripts/url/tradingview.sh"), desc='Tradingview'),
         Key([mod], "b", lazy.spawn("/home/jonalm/scripts/url/swedbank.sh"), desc='Swedbank'),
@@ -98,10 +95,10 @@ keys = [
 
 ### GROUP SETTINGS ###
 groups = [
-        Group('Left', label="", matches=[Match(wm_class='chromium'), Match(wm_class='spotify'),  Match(wm_class='/usr/bin/discord')], layout="monadtall"),
-        Group('4', label="", layout="monadtall"),
-        Group('6', label="", layout="monadtall"),
         Group('8', label="", layout="monadtall"),
+        Group('6', label="", layout="monadtall"),
+        Group('4', label="", layout="monadtall"),
+        Group('Left', label="", matches=[Match(wm_class='chromium'), Match(wm_class='spotify'),  Match(wm_class='/usr/bin/discord')], layout="monadtall"),
         Group('Right', label="", matches=[Match(wm_class='/usr/bin/emacs')]),
         Group('3', label="", layout="monadwide"),
         Group('5', label="", layout="monadwide"),
@@ -113,9 +110,12 @@ groups.append(ScratchPad('2', [
     DropDown('mixer', 'pavucontrol', width=0.4, height=0.4, x=0.3, y=0.25, opacity=1),
     DropDown('net', 'nm-connection-editor', width=0.4, height=0.4, x=0.3, y=0.25, opacity=1),
     DropDown('bluetooth', 'blueman-manager', width=0.4, height=0.4, x=0.3, y=0.25, opacity=1),
-    DropDown('nnn', 'alacritty -e nnn -d -e -H -r', width=0.4, height=0.6, x=0.3, y=0.18, opacity=1),
-    DropDown('music', 'spotify', width=0.7, height=0.8, x=0.15, y=0.1, opacity=1),
-    DropDown('todo', 'ticktick', width=0.7, height=0.8, x=0.15, y=0.1, opacity=1)
+    DropDown('filemanager', 'pcmanfm', width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
+    DropDown('music', 'spotify', width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
+    DropDown('todo', 'ticktick', width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
+    DropDown('calender', '/home/jonalm/.webcatalog/TimeTree/TimeTree', width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
+    DropDown('passwords', '/home/jonalm/.webcatalog/LastPass/LastPass', width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
+    DropDown('mail', 'thunderbird', width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95)
 ]))
 
 ### MOVE WINDOW TO WORKSPACE ###
@@ -128,10 +128,13 @@ for i in groups:
         #SCRATCHPAD
         Key([mod], "period", lazy.group['2'].dropdown_toggle('mixer')),
         Key([mod], "comma", lazy.group['2'].dropdown_toggle('net')),
-        Key([mod], "n", lazy.group['2'].dropdown_toggle('nnn')),
+        Key([mod], "n", lazy.group['2'].dropdown_toggle('filemanager')),
         Key([mod], "s", lazy.group['2'].dropdown_toggle('music')),
         Key([mod], "r", lazy.group['2'].dropdown_toggle('todo')),
         Key([mod], "x", lazy.group['2'].dropdown_toggle('bluetooth')),
+        Key([mod], "k", lazy.group['2'].dropdown_toggle('calender')),
+        Key([mod], "p", lazy.group['2'].dropdown_toggle('passwords')),
+        Key([mod], "m", lazy.group['2'].dropdown_toggle('mail')),
     ])
 
 ### LAYOUT SETTINGS ###
@@ -206,6 +209,8 @@ auto_minimize = True
 
 @hook.subscribe.startup_once
 def autostart():
+    lazy.group["Left"].toscreen(0)
+    lazy.group["right"].toscreen(1)
     home = os.path.expanduser('~/.config/qtile/autostart.sh')
     subprocess.call([home])
 
