@@ -3,8 +3,9 @@ import subprocess
 from typing import List  # noqa: F401
 
 from libqtile import hook
-
+from libqtile import qtile
 from libqtile import extension
+
 from libqtile.extension.dmenu import DmenuRun
 from libqtile.extension.window_list import WindowList
 from libqtile.extension.command_set import CommandSet
@@ -90,14 +91,14 @@ keys = [
 
 ### GROUP SETTINGS ###
 groups = [
-        Group('8', label="", layout="monadtall"),
-        Group('6', label="", layout="monadtall"),
-        Group('4', label="", layout="monadtall"),
         Group('Left', label="", matches=[Match(wm_class='chromium'), Match(wm_class='spotify'),  Match(wm_class='/usr/bin/discord')], layout="monadtall"),
         Group('Right', label="", matches=[Match(wm_class='/usr/bin/emacs')]),
         Group('3', label="", layout="monadwide"),
+        Group('4', label="", layout="monadtall"),
         Group('5', label="", layout="monadwide"),
+        Group('6', label="", layout="monadtall"),
         Group('7', label="", layout="monadwide"),
+        Group('8', label="", layout="monadtall"),
 ]
 
 ### SCRATCHPAD ###
@@ -210,9 +211,24 @@ auto_minimize = True
 
 @hook.subscribe.startup_once
 def autostart():
-    lazy.group["Left"].toscreen(0)
-    lazy.group["right"].toscreen(1)
     home = os.path.expanduser('~/.config/qtile/autostart.sh')
     subprocess.call([home])
+
+    qtile.cmd_simulate_keypress([mod], 'period')
+    qtile.cmd_simulate_keypress([mod], 'comma')
+    qtile.cmd_simulate_keypress([mod], 'n')
+    qtile.cmd_simulate_keypress([mod], 's')
+    qtile.cmd_simulate_keypress([mod], 'r')
+    qtile.cmd_simulate_keypress([mod], 'x')
+    qtile.cmd_simulate_keypress([mod], 'k')
+    qtile.cmd_simulate_keypress([mod], 'p')
+    qtile.cmd_simulate_keypress([mod], 'm')
+
+    def show_window(window):
+        window.group.cmd_togroup("left")
+
+@hook.subscribe.client_managed
+def show_window(window):
+    window.group.cmd_togroup()
 
 wmname = "LG3D"

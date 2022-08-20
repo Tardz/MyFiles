@@ -151,7 +151,7 @@ bar = Bar([
 
     GroupBox(
         disable_drag=True,
-        visible_groups=['Left', '4', '6', '8'],
+        visible_groups=['8', '6', '4', 'Left'],
         active=gruvbox['groupboxactive'],
         inactive=gruvbox['groupboxinactive'],
         highlight_method='line',
