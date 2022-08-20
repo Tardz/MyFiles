@@ -91,29 +91,29 @@ keys = [
 
 ### GROUP SETTINGS ###
 groups = [
-        Group('Left', label="", matches=[Match(wm_class='chromium'), Match(wm_class='spotify'),  Match(wm_class='/usr/bin/discord')], layout="monadtall"),
-        Group('Right', label="", matches=[Match(wm_class='/usr/bin/emacs')]),
-        Group('3', label="", layout="monadwide"),
-        Group('4', label="", layout="monadtall"),
-        Group('5', label="", layout="monadwide"),
-        Group('6', label="", layout="monadtall"),
         Group('7', label="", layout="monadwide"),
+        Group('5', label="", layout="monadwide"),
+        Group('3', label="", layout="monadwide"),
+        Group('Right', label="", matches=[Match(wm_class='/usr/bin/emacs')]),
+        Group('Left', label="", matches=[Match(wm_class='chromium'), Match(wm_class='spotify'), Match(wm_class='pcmanfm'),  Match(wm_class='/usr/bin/discord')], layout="monadtall"),
+        Group('4', label="", layout="monadtall"),
+        Group('6', label="", layout="monadtall"),
         Group('8', label="", layout="monadtall"),
 ]
 
 ### SCRATCHPAD ###
 groups.append(ScratchPad('2', [
-    DropDown('mixer', 'pavucontrol', width=0.4, height=0.4, x=0.3, y=0.25, opacity=1),
-    DropDown('net', 'nm-connection-editor', width=0.4, height=0.4, x=0.3, y=0.25, opacity=1),
-    DropDown('bluetooth', 'blueman-manager', width=0.4, height=0.4, x=0.3, y=0.25, opacity=1),
-    DropDown('filemanager', 'pcmanfm', width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
-    DropDown('music', 'spotify', width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
-    DropDown('todo', 'ticktick', width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
-    DropDown('calender', '/home/jonalm/.webcatalog/TimeTree/TimeTree', width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
-    DropDown('passwords', '/home/jonalm/.webcatalog/LastPass/LastPass', width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
-    DropDown('mail', 'thunderbird', width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
-    DropDown('github', '/home/jonalm/.webcatalog/GitHub/GitHub', width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
-    DropDown('githubPush', '/home/jonalm/scripts/term/gitpush.sh', width=0.4, height=0.4, x=0.3, y=0.25, opacity=1)
+    DropDown('mixer', 'pavucontrol', warp_pointer=True, width=0.4, height=0.4, x=0.3, y=0.25, opacity=1),
+    DropDown('net', 'nm-connection-editor', warp_pointer=True, width=0.4, height=0.4, x=0.3, y=0.25, opacity=1),
+    DropDown('bluetooth', 'blueman-manager', warp_pointer=True, width=0.4, height=0.4, x=0.3, y=0.25, opacity=1),
+    DropDown('filemanager', 'pcmanfm', matches=[Match(wm_class='pcmanfm')], warp_pointer=True, width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
+    DropDown('music', 'spotify', warp_pointer=True, width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
+    DropDown('todo', 'ticktick', warp_pointer=True, width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
+    DropDown('calender', '/home/jonalm/.webcatalog/TimeTree/TimeTree', warp_pointer=True, width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
+    DropDown('passwords', '/home/jonalm/.webcatalog/LastPass/LastPass', warp_pointer=True, width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
+    DropDown('mail', 'thunderbird', warp_pointer=True, width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
+    DropDown('github', '/home/jonalm/.webcatalog/GitHub/GitHub', warp_pointer=True, width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
+    DropDown('githubPush', '/home/jonalm/scripts/term/gitpush.sh', warp_pointer=True, width=0.4, height=0.4, x=0.3, y=0.25, opacity=1)
 ]))
 
 ### MOVE WINDOW TO WORKSPACE ###

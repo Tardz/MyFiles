@@ -69,7 +69,7 @@ bar = Bar([
     Clock(
         background=gruvbox['arrow2'],
         foreground=gruvbox['bartext'],
-        format=' %Y-%m-%d %R'
+        format='%R'
     ),
 
     right_arrow(
@@ -78,7 +78,8 @@ bar = Bar([
     ),
 
     Memory(
-        format=' {MemUsed: .0f}{mm} /{MemTotal: .0f}{mm}',
+        #format=' {MemUsed: .0f}{mm} /{MemTotal: .0f}{mm}',
+        measure_mem='G',
         background=gruvbox['arrow1'],
         foreground=gruvbox['bartext']
     ),
