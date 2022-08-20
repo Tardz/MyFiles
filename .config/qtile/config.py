@@ -91,14 +91,14 @@ keys = [
 
 ### GROUP SETTINGS ###
 groups = [
-        Group('7', label="", layout="monadwide"),
-        Group('5', label="", layout="monadwide"),
-        Group('3', label="", layout="monadwide"),
-        Group('Right', label="", matches=[Match(wm_class='/usr/bin/emacs')]),
         Group('Left', label="", matches=[Match(wm_class='chromium'), Match(wm_class='spotify'), Match(wm_class='pcmanfm'),  Match(wm_class='/usr/bin/discord')], layout="monadtall"),
         Group('4', label="", layout="monadtall"),
         Group('6', label="", layout="monadtall"),
         Group('8', label="", layout="monadtall"),
+        Group('3', label="", layout="monadwide"),
+        Group('5', label="", layout="monadwide"),
+        Group('7', label="", layout="monadwide"),
+        Group('Right', label="", matches=[Match(wm_class='/usr/bin/emacs')]),
 ]
 
 ### SCRATCHPAD ###
@@ -106,7 +106,7 @@ groups.append(ScratchPad('2', [
     DropDown('mixer', 'pavucontrol', warp_pointer=True, width=0.4, height=0.4, x=0.3, y=0.25, opacity=1),
     DropDown('net', 'nm-connection-editor', warp_pointer=True, width=0.4, height=0.4, x=0.3, y=0.25, opacity=1),
     DropDown('bluetooth', 'blueman-manager', warp_pointer=True, width=0.4, height=0.4, x=0.3, y=0.25, opacity=1),
-    DropDown('filemanager', 'pcmanfm', matches=[Match(wm_class='pcmanfm')], warp_pointer=True, width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
+    DropDown('filemanager', 'pcmanfm', warp_pointer=True, width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
     DropDown('music', 'spotify', warp_pointer=True, width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
     DropDown('todo', 'ticktick', warp_pointer=True, width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
     DropDown('calender', '/home/jonalm/.webcatalog/TimeTree/TimeTree', warp_pointer=True, width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
@@ -214,6 +214,7 @@ def autostart():
     home = os.path.expanduser('~/.config/qtile/autostart.sh')
     subprocess.call([home])
 
+    #SCRATCHPAD
     qtile.cmd_simulate_keypress([mod], 'period')
     qtile.cmd_simulate_keypress([mod], 'comma')
     qtile.cmd_simulate_keypress([mod], 'n')
@@ -224,11 +225,14 @@ def autostart():
     qtile.cmd_simulate_keypress([mod], 'p')
     qtile.cmd_simulate_keypress([mod], 'm')
 
-    def show_window(window):
-        window.group.cmd_togroup("left")
-
-@hook.subscribe.client_managed
-def show_window(window):
-    window.group.cmd_togroup()
+    #SWITCH GROUP
+    qtile.cmd_simulate_keypress([mod], "Right")
+    qtile.cmd_simulate_keypress(["mod1", "control"], "Right")
+    qtile.cmd_simulate_keypress(["mod1", "control"], "Right")
+    qtile.cmd_simulate_keypress(["mod1", "control"], "Right")
+    qtile.cmd_simulate_keypress(["mod1", "control"], "Right")
+    qtile.cmd_simulate_keypress(["mod1", "control"], "Right")
+    qtile.cmd_simulate_keypress(["mod1", "control"], "Right")
+    qtile.cmd_simulate_keypress([mod], 'Left')
 
 wmname = "LG3D"

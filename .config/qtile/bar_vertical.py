@@ -169,7 +169,7 @@ bar = Bar([
 
     Spacer(
         length=5,
-        background=gruvbox['arrow3']
+        background=gruvbox['groupboxbg']
     ),
 
     ], background=gruvbox['background'], size=24, margin=0, opacity=0.95)
