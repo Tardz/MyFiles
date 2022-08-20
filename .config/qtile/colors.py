@@ -55,7 +55,8 @@ gruvbox = {
         # BAR #
         'arrow1':            blue,
         'arrow2':            purple,
-        'arrow3':            bg2,
+        'arrow3':            bg0,
+        'arrow4':            bg3,
         'sep':               bg5,
         'background':        bg0,
         'bartext':           text,

@@ -25,32 +25,37 @@ bar = Bar([
         countdown_format='',
         countdown_start=1,
         default_text='',
-        background=gruvbox['arrow3'],
+        background=gruvbox['arrow1'],
         foreground=gruvbox['bartext']
     ),
 
     Spacer(
-        background=gruvbox['arrow3'],
-        length=5
+        background=gruvbox['arrow1'],
+        length=4
     ),
 
-    Sep(
-        background=gruvbox['arrow3'],
-        foreground=gruvbox['sep'],
-        size_percent=60,
-        linewidth=1
+    left_arrow(
+        gruvbox['arrow1'],
+        gruvbox['arrow3']
     ),
 
-    Spacer(
-        background=gruvbox['arrow3'],
-        length=1
-    ),
+    #Sep(
+    #    background=gruvbox['arrow3'],
+    #    foreground=gruvbox['sep'],
+    #    size_percent=60,
+    #    linewidth=1
+    #),
 
-    CheckUpdates(
-        display_format="  {updates}" ,
-        background=gruvbox['arrow3'],
-        foreground=gruvbox['bartext']
-    ),
+    #Spacer(
+    #    background=gruvbox['arrow3'],
+    #    length=1
+    #),
+
+    #CheckUpdates(
+    #    display_format="  {updates}" ,
+    #    background=gruvbox['arrow3'],
+    #    foreground=gruvbox['bartext']
+    #),
 
     Systray(
         background=gruvbox['arrow3']
@@ -58,27 +63,16 @@ bar = Bar([
 
     Spacer(
         background=gruvbox['arrow3'],
-        length=2
-    ),
-
-    right_arrow(
-        gruvbox['arrow2'],
-        gruvbox['arrow3']
-    ),
-
-    Clock(
-        background=gruvbox['arrow2'],
-        foreground=gruvbox['bartext'],
-        format='%R'
+        length=4
     ),
 
     right_arrow(
         gruvbox['arrow1'],
-        gruvbox['arrow2']
+        gruvbox['arrow3']
     ),
 
     Memory(
-        #format=' {MemUsed: .0f}{mm} /{MemTotal: .0f}{mm}',
+        format=' {MemUsed: .0f} /{MemTotal: .0f}',
         measure_mem='G',
         background=gruvbox['arrow1'],
         foreground=gruvbox['bartext']
@@ -90,7 +84,7 @@ bar = Bar([
     ),
 
     CPU(
-        format='{load_percent}%',
+        format='  {load_percent}%',
         background=gruvbox['arrow2'],
         foreground=gruvbox['bartext']
     ),
@@ -100,10 +94,21 @@ bar = Bar([
         gruvbox['arrow2']
     ),
 
-    ThermalSensor(
-        format=" {temp:.1f}{°}",
+    #ThermalSensor(
+    #    format=" {temp:.1f}{°}",
+    #    background=gruvbox['arrow2'],
+    #    foreground=gruvbox['bartext']
+    #),
+
+    #right_arrow(
+    #    gruvbox['arrow1'],
+    #    gruvbox['arrow2']
+    #),
+
+    Clock(
         background=gruvbox['arrow1'],
-        foreground=gruvbox['bartext']
+        foreground=gruvbox['bartext'],
+        format='  %R'
     ),
 
     right_arrow(
