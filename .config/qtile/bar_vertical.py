@@ -58,12 +58,12 @@ bar = Bar([
     #),
 
     Systray(
-        background=gruvbox['arrow3']
+        background=gruvbox['arrow3'], icon_size=15
     ),
 
     Spacer(
         background=gruvbox['arrow3'],
-        length=4
+        length=5
     ),
 
     right_arrow(
@@ -172,7 +172,7 @@ bar = Bar([
         background=gruvbox['groupboxbg']
     ),
 
-    ], background=gruvbox['background'], size=24, margin=0, opacity=0.95)
+    ], background=gruvbox['background'], size=24, margin=5, opacity=1)
 
 ### BAR ON SCREEN 2 ###
 bar2 = Bar([
@@ -227,4 +227,4 @@ bar2 = Bar([
 
     Spacer(length=8),
 
-    ], background=gruvbox['background'], size=24, margin=0, opacity=0.95)
+    ], background=gruvbox['background'], size=24, margin=5, opacity=1)

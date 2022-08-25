@@ -50,20 +50,45 @@ fg3 = '#ebdbb2'
 fg4 = '#fbf1c7'
 fg5 = '#fbf1c7'
 
+### NORD ###
+# Frost
+nblue1='#8FBCBB'
+nblue2='#88C0D0'
+nblue3='#81A1C1'
+nblue4='#5E81AC'
+
+# Polarnight
+nblack1='#4C566A'
+nblack2='#434C5E'
+nblack3='#3B4252'
+nblack4='#2E3440'
+
+# Snowstorm
+nwhite1='#ECEFF4'
+nwhite2='#E5E9F0'
+nwhite3='#D8DEE9'
+
+# Aurora
+nred='#BF616A'
+norange='#D08770'
+nyellow='#EBCB8B'
+ngreen='#A3BE8C'
+npurple='#B48EAD'
+
 gruvbox = {
         ### VARIABLES ###
         # BAR #
-        'arrow1':            blue,
-        'arrow2':            purple,
-        'arrow3':            bg2,
+        'arrow1':            nblack3,
+        'arrow2':            nblack1,
+        'arrow3':            bg1,
         'arrow4':            bg3,
         'sep':               bg5,
-        'background':        bg0,
+        'background':        transp1,
         'bartext':           text,
         
         # LAYOUTS #
         'windowoutline':     bg5,
-        'windowfocus0':      blue,
+        'windowfocus0':      nblue3,
         'windowfocus1':      purple,
         'windowfocus2':      aqua,
 
@@ -71,11 +96,11 @@ gruvbox = {
         'groupboxbg':        bg2,
         'groupboxactive':    blue,
         'groupboxinactive':  bg4,
-        'groupboxcurrent':   purple,
+        'groupboxcurrent':   nblue3,
 
         # DMENU #
-        'dmenuselfg':        darkblue,
-        'dmenubg':           bg0,
-        'dmenufg':           gray
+        'dmenuselfg':        nblue4,
+        'dmenubg':           nblack4,
+        'dmenufg':           nblack1,
         }
 

@@ -21,7 +21,6 @@ from libqtile.config import Click, Drag, KeyChord, DropDown, Group, Key, Match, 
 from libqtile.lazy import lazy
 
 from colors import gruvbox
-#from bar import bar, bar2
 from bar_vertical import bar, bar2
 
 mod1 = "Alt"
@@ -62,7 +61,7 @@ keys = [
         Key([mod], "d", lazy.spawn("/usr/bin/discord"), desc='Discord'),
         Key([mod], "e", lazy.spawn("/usr/bin/emacs"), desc='Emacs'),
         Key([mod], "i", lazy.spawn("/usr/bin/code"), desc='VScode'),
-        Key([mod], "o", lazy.spawn("/home/jonalm/.webcatalog/microsoftexcelonline/microsoftexcelonline"), desc='Office'),
+        Key([mod], "o", lazy.spawn("/home/jonalm/.webcatalog/microsoftexcelonline/microsoftexcelonline"), desc='Excel'),
 
         #URL
         Key([mod], "a", lazy.spawn("/home/jonalm/scripts/url/avanza.sh"), desc='Avanza'),
@@ -106,7 +105,7 @@ groups.append(ScratchPad('2', [
     DropDown('mixer', 'pavucontrol', warp_pointer=True, width=0.4, height=0.4, x=0.3, y=0.25, opacity=1),
     DropDown('net', 'nm-connection-editor', warp_pointer=True, width=0.4, height=0.4, x=0.3, y=0.25, opacity=1),
     DropDown('bluetooth', 'blueman-manager', warp_pointer=True, width=0.4, height=0.4, x=0.3, y=0.25, opacity=1),
-    DropDown('filemanager', 'pcmanfm', warp_pointer=True, width=0.6, height=0.7, x=0.2, y=0.12, opacity=1),
+    DropDown('filemanager', 'pcmanfm', warp_pointer=True, width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
     DropDown('music', 'spotify', warp_pointer=True, width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
     DropDown('todo', 'ticktick', warp_pointer=True, width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
     DropDown('calender', '/home/jonalm/.webcatalog/TimeTree/TimeTree', warp_pointer=True, width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
