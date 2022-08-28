@@ -164,7 +164,6 @@ layouts = [
     )
 ]
 
-
 #FLOATING LAYOUT SETTINGS AND ASSIGNED APPS
 floating_layout = Floating(
     border_normal=gruvbox['windowoutline'],
