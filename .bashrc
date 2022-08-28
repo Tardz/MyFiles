@@ -16,8 +16,8 @@ neofetch
 
 ### ALIAS ###
 alias ..='cd ..'
-alias ll='lsd -all'
-alias l="lsd"
+alias l='lsd -all'
+alias ll="lsd"
 alias pacman='sudo pacman'
 alias update='pacman -Syu'
 alias pac='pacman -R $(pacman -Qtdq)'

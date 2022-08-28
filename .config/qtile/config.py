@@ -106,9 +106,9 @@ groups.append(ScratchPad('2', [
     DropDown('net', 'nm-connection-editor', warp_pointer=True, width=0.4, height=0.4, x=0.3, y=0.25, opacity=1),
     DropDown('bluetooth', 'blueman-manager', warp_pointer=True, width=0.4, height=0.4, x=0.3, y=0.25, opacity=1),
     DropDown('filemanager', 'pcmanfm', warp_pointer=True, width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
-    DropDown('music', 'spotify', warp_pointer=True, width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
+    DropDown('music', 'spotify', warp_pointer=True, width=0.6, height=0.7, x=0.2, y=0.12, opacity=1),
     DropDown('todo', 'ticktick', warp_pointer=True, width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
-    DropDown('calender', '/home/jonalm/.webcatalog/TimeTree/TimeTree', warp_pointer=True, width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
+    DropDown('calender', '/home/jonalm/.webcatalog/TimeTree/TimeTree', warp_pointer=True, width=0.6, height=0.7, x=0.2, y=0.12, opacity=1),
     DropDown('passwords', '/home/jonalm/.webcatalog/LastPass/LastPass', warp_pointer=True, width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
     DropDown('mail', 'thunderbird', warp_pointer=True, width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
     DropDown('github', '/home/jonalm/.webcatalog/GitHub/GitHub', warp_pointer=True, width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
@@ -145,22 +145,22 @@ layouts = [
         border_focus=gruvbox['windowfocus1'],
         border_width=2,
         num_stacks=1,
-        margin=10,
+        margin=9,
     ),
     Stack(
         border_normal=gruvbox['windowoutline'],
         border_focus=gruvbox['windowfocus1'],
         border_width=2,
         num_stacks=1,
-        margin=10,
+        margin=9,
     ),
     MonadTall(
         border_normal=gruvbox['windowoutline'],
         border_focus=gruvbox['windowfocus0'],
-        margin=10,
+        margin=9,
         border_width=2,
         single_border_width=2,
-        single_margin=10,
+        single_margin=9,
     )
 ]
 

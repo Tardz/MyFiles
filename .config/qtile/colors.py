@@ -80,23 +80,28 @@ gruvbox = {
         # BAR #
         'arrow1':            nblack3,
         'arrow2':            nblack1,
-        'arrow3':            bg1,
-        'arrow4':            bg3,
+        'arrow3':            nblack2,
+        'systray':           bg0,
         'sep':               bg5,
-        'background':        transp1,
+        'background':        nblack4,
         'bartext':           text,
         
         # LAYOUTS #
-        'windowoutline':     bg5,
+        'windowoutline':     bg3,
         'windowfocus0':      nblue3,
-        'windowfocus1':      purple,
-        'windowfocus2':      aqua,
+        'windowfocus1':      nblue3,
+        'windowfocus2':      nblue3,
 
         # GROUPBOX #
-        'groupboxbg':        bg2,
-        'groupboxactive':    blue,
+        'groupboxbg':        bg0,
+        'groupboxactive':    nblue1,
+        'groupboxcurrent':   nblue4,
         'groupboxinactive':  bg4,
-        'groupboxcurrent':   nblue3,
+
+        # TASKLIST #
+        'tasklistborder':    nblack2,
+        'tasklistunborder':  nblack4,
+        'tasklistfg':        text,
 
         # DMENU #
         'dmenuselfg':        nblue4,

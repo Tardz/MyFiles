@@ -25,85 +25,56 @@ bar = Bar([
         countdown_format='',
         countdown_start=1,
         default_text='',
-        background=gruvbox['arrow1'],
+        background=gruvbox['arrow2'],
         foreground=gruvbox['bartext']
     ),
 
     Spacer(
-        background=gruvbox['arrow1'],
+        background=gruvbox['arrow2'],
         length=4
     ),
 
     left_arrow(
-        gruvbox['arrow1'],
-        gruvbox['arrow3']
+        gruvbox['arrow2'],
+        gruvbox['systray']
     ),
 
-    #Sep(
-    #    background=gruvbox['arrow3'],
-    #    foreground=gruvbox['sep'],
-    #    size_percent=60,
-    #    linewidth=1
-    #),
-
-    #Spacer(
-    #    background=gruvbox['arrow3'],
-    #    length=1
-    #),
-
-    #CheckUpdates(
-    #    display_format="  {updates}" ,
-    #    background=gruvbox['arrow3'],
-    #    foreground=gruvbox['bartext']
-    #),
-
     Systray(
-        background=gruvbox['arrow3'], icon_size=15
+        background=gruvbox['systray'], icon_size=15
     ),
 
     Spacer(
-        background=gruvbox['arrow3'],
+        background=gruvbox['systray'],
         length=5
     ),
 
     right_arrow(
-        gruvbox['arrow1'],
-        gruvbox['arrow3']
+        gruvbox['arrow2'],
+        gruvbox['systray']
     ),
 
     Memory(
         format=' {MemUsed: .0f} /{MemTotal: .0f}',
         measure_mem='G',
-        background=gruvbox['arrow1'],
-        foreground=gruvbox['bartext']
-    ),
-
-    right_arrow(
-        gruvbox['arrow2'],
-        gruvbox['arrow1']
-    ),
-
-    CPU(
-        format='  {load_percent}%',
         background=gruvbox['arrow2'],
         foreground=gruvbox['bartext']
     ),
 
     right_arrow(
-        gruvbox['arrow1'],
+        gruvbox['arrow3'],
         gruvbox['arrow2']
     ),
 
-    #ThermalSensor(
-    #    format=" {temp:.1f}{°}",
-    #    background=gruvbox['arrow2'],
-    #    foreground=gruvbox['bartext']
-    #),
+    CPU(
+        format='  {load_percent}%',
+        background=gruvbox['arrow3'],
+        foreground=gruvbox['bartext']
+    ),
 
-    #right_arrow(
-    #    gruvbox['arrow1'],
-    #    gruvbox['arrow2']
-    #),
+    right_arrow(
+        gruvbox['arrow1'],
+        gruvbox['arrow3']
+    ),
 
     Clock(
         background=gruvbox['arrow1'],
@@ -119,11 +90,19 @@ bar = Bar([
     Spacer(length=8),
 
     TaskList(
-        padding=3,
+        padding=4,
+        spacing=3,
+        icon_size=12,
+        margin=1,
+        borderwidth=1,
+        max_title_width=300,
+        txt_floating=' 缾 ',
+        txt_maximized=' 类 ',
+        txt_minimized=' 絛 ',
         highlight_method='block',
-        border='#3a3a3a',
-        unfocused_border='#262626',
-        foreground=gruvbox['bartext']
+        border=gruvbox['tasklistborder'],
+        unfocused_border=gruvbox['tasklistunborder'],
+        foreground=gruvbox['tasklistfg']
     ),
 
     Spacer(8),
@@ -172,7 +151,7 @@ bar = Bar([
         background=gruvbox['groupboxbg']
     ),
 
-    ], background=gruvbox['background'], size=24, margin=5, opacity=1)
+    ], background=gruvbox['background'], size=24, margin=9, opacity=1)
 
 ### BAR ON SCREEN 2 ###
 bar2 = Bar([
@@ -218,13 +197,21 @@ bar2 = Bar([
     Spacer(length=8),
 
     TaskList(
-    padding=3,
-    highlight_method='block',
-    border='#3a3a3a',
-    unfocused_border='#262626',
-    foreground=gruvbox['bartext']
+        padding=4,
+        spacing=3,
+        icon_size=12,
+        margin=1,
+        borderwidth=1,
+        max_title_width=300,
+        txt_floating=' 缾 ',
+        txt_maximized=' 类 ',
+        txt_minimized=' 絛 ',
+        highlight_method='block',
+        border=gruvbox['tasklistborder'],
+        unfocused_border=gruvbox['tasklistunborder'],
+        foreground=gruvbox['tasklistfg']
     ),
 
     Spacer(length=8),
 
-    ], background=gruvbox['background'], size=24, margin=5, opacity=1)
+    ], background=gruvbox['background'], size=24, margin=9, opacity=1)

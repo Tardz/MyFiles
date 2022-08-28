@@ -128,6 +128,7 @@ draw_bold_text_with_bright_colors: true
 #######################################
 ##      START OF COLOR SCHEMES       ##
 #######################################
+
 schemes:
   ### Doom One ###
   DoomOne: &DoomOne
@@ -553,7 +554,7 @@ schemes:
 # *GruvboxMaterial
 # *RemedyDark
 
-colors: *Dracula
+colors: *Nord
 
 #######################################
 ##       END OF COLOR SCHEMES        ##
