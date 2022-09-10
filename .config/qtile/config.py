@@ -61,6 +61,7 @@ keys = [
         Key([mod], "d", lazy.spawn("/usr/bin/discord"), desc='Discord'),
         Key([mod], "e", lazy.spawn("/usr/bin/emacs"), desc='Emacs'),
         Key([mod], "i", lazy.spawn("/usr/bin/code"), desc='VScode'),
+        Key([mod], "m", lazy.spawn("/usr/bin/thunderbird"), desc='Mail'),
         Key([mod], "o", lazy.spawn("/home/jonalm/.webcatalog/microsoftexcelonline/microsoftexcelonline"), desc='Excel'),
 
         #URL
@@ -108,9 +109,8 @@ groups.append(ScratchPad('2', [
     DropDown('filemanager', 'pcmanfm', warp_pointer=True, width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
     DropDown('music', 'spotify', warp_pointer=True, width=0.6, height=0.7, x=0.2, y=0.12, opacity=1),
     DropDown('todo', 'ticktick', warp_pointer=True, width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
-    DropDown('calender', '/home/jonalm/.webcatalog/TimeTree/TimeTree', warp_pointer=True, width=0.6, height=0.7, x=0.2, y=0.12, opacity=1),
     DropDown('passwords', '/home/jonalm/.webcatalog/LastPass/LastPass', warp_pointer=True, width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
-    DropDown('mail', 'thunderbird', warp_pointer=True, width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
+    #DropDown('mail', 'thunderbird', warp_pointer=True, width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
     DropDown('github', '/home/jonalm/.webcatalog/GitHub/GitHub', warp_pointer=True, width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
     DropDown('githubPush', '/home/jonalm/scripts/term/gitpush.sh', warp_pointer=True, width=0.4, height=0.4, x=0.3, y=0.25, opacity=1)
 ]))
@@ -129,9 +129,8 @@ for i in groups:
         Key([mod], "s", lazy.group['2'].dropdown_toggle('music')),
         Key([mod], "r", lazy.group['2'].dropdown_toggle('todo')),
         Key([mod], "x", lazy.group['2'].dropdown_toggle('bluetooth')),
-        Key([mod], "k", lazy.group['2'].dropdown_toggle('calender')),
         Key([mod], "p", lazy.group['2'].dropdown_toggle('passwords')),
-        Key([mod], "m", lazy.group['2'].dropdown_toggle('mail')),
+        #Key([mod], "m", lazy.group['2'].dropdown_toggle('mail')),
         KeyChord([mod], "g",
                  [Key([], "p", lazy.group['2'].dropdown_toggle('githubPush')),
                   Key([], "g", lazy.group['2'].dropdown_toggle('github'))]),
@@ -219,9 +218,8 @@ def autostart():
     qtile.cmd_simulate_keypress([mod], 's')
     qtile.cmd_simulate_keypress([mod], 'r')
     qtile.cmd_simulate_keypress([mod], 'x')
-    qtile.cmd_simulate_keypress([mod], 'k')
     qtile.cmd_simulate_keypress([mod], 'p')
-    qtile.cmd_simulate_keypress([mod], 'm')
+    #qtile.cmd_simulate_keypress([mod], 'm')
 
     #SWITCH GROUP
     qtile.cmd_simulate_keypress([mod], "Right")
