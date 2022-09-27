@@ -11,6 +11,7 @@ def find_player(player):
 
     return find_player
 
+#Fråga: vrf kan man ej använda "or" i listan?
 def get_piece(board, column, row):
     for location in board:
         if (column, row, "spelare1") == location or (column, row, "spelare2") == location:
@@ -44,15 +45,15 @@ def remove_piece(board, column, row):
         if (column, row, player) == location:
             board.remove(location)
             return True
-
-    return False
+        else:
+            return False
 
 def move_piece(board, column, row, new_column, new_row):
     player = get_piece(board, column, row)
     other_player = find_player(player)
 
     if (column, row, player) in board:
-        if (new_column, new_row, player) in board or (new_column, new_row, other_player) in board:
+        if (new_column, new_row, other_player) in board:
             return False
         else:
             board.remove((column, row, player))
@@ -91,18 +92,18 @@ def nearest_piece(board, column, row):
     shortest_path = -1
 
     for tuple in board:
-        pythagorean_first = (tuple[0]**2 + tuple[1]**2)**0.5
-        difference_first = current_pythagorean - pythagorean_first
+        pythagorean = (tuple[0]**2 + tuple[1]**2)**0.5
+        difference = current_pythagorean - pythagorean
         
-        if difference_first < 0:
-            difference_first = difference_first * -1
+        if difference < 0:
+            difference = difference * -1
 
         if shortest_path == -1:
-            shortest_path = difference_first
-        elif shortest_path < difference_first:
+            shortest_path = difference
+        elif shortest_path < difference:
             shortest_path = shortest_path
         else:
-            shortest_path = difference_first
+            shortest_path = difference
     
     for tuple in board:
         if ((current_pythagorean - ((tuple[0]**2 + tuple[1]**2)**0.5))**2)**0.5 == shortest_path:
@@ -113,14 +114,14 @@ def factorial(n):
     if n == 1 or 0:
         return 1
 
-    length = 2
-    result = n * (n-1)
+    length = 1
+    result = n
 
-    for number in range(n-2):
+    for number in range(n-1):
             result = result * (n - length)
             length += 1
 
-    return result
+    return int(result)
 
 def choose(n, k):
     if k == 0:
@@ -128,8 +129,9 @@ def choose(n, k):
     elif n == k:
         return 1
     elif n > k:
-        return (factorial(n)/(factorial(k)*factorial(n-k)))
+        return "%.10000g" % (factorial(n)/(factorial(k)*factorial(n-k)))
     else:
         return False
-
-print(choose(10, 0))
+        
+print(factorial(1000))
+print(choose(1000, 800))

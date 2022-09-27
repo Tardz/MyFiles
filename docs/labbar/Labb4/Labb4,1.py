@@ -121,5 +121,3 @@ def interpret(expression, interpretation):
 interpret(["NOT", ["NOT", ["NOT", ["cat_asleep", "OR", ["NOT", "cat_asleep"]]]]],
                {"cat_asleep": "false"})
 
-
-print(1)

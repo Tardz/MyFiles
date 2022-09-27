@@ -63,6 +63,7 @@ keys = [
         Key([mod], "i", lazy.spawn("/usr/bin/code"), desc='VScode'),
         Key([mod], "m", lazy.spawn("/usr/bin/thunderbird"), desc='Mail'),
         Key([mod], "o", lazy.spawn("/home/jonalm/.webcatalog/microsoftexcelonline/microsoftexcelonline"), desc='Excel'),
+        #Key([mod], "u", lazy.spawn("/home/jonalm/.webcatalog/GoogleDrive/GoogleDrive"), desc='Google drive'),
 
         #URL
         Key([mod], "a", lazy.spawn("/home/jonalm/scripts/url/avanza.sh"), desc='Avanza'),
@@ -110,6 +111,7 @@ groups.append(ScratchPad('2', [
     DropDown('music', 'spotify', warp_pointer=True, width=0.6, height=0.7, x=0.2, y=0.12, opacity=1),
     DropDown('todo', 'ticktick', warp_pointer=True, width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
     DropDown('passwords', '/home/jonalm/.webcatalog/LastPass/LastPass', warp_pointer=True, width=0.6, height=0.7, x=0.2, y=0.12, opacity=1),
+    DropDown('drive', '/home/jonalm/.webcatalog/GoogleDrive/GoogleDrive', warp_pointer=True, width=0.6, height=0.7, x=0.2, y=0.12, opacity=1),
     #DropDown('mail', 'thunderbird', warp_pointer=True, width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
     DropDown('github', '/home/jonalm/.webcatalog/GitHub/GitHub', warp_pointer=True, width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
     DropDown('githubPush', '/home/jonalm/scripts/term/gitpush.sh', warp_pointer=True, width=0.4, height=0.4, x=0.3, y=0.25, opacity=1)
@@ -130,6 +132,7 @@ for i in groups:
         Key([mod], "r", lazy.group['2'].dropdown_toggle('todo')),
         Key([mod], "x", lazy.group['2'].dropdown_toggle('bluetooth')),
         Key([mod], "p", lazy.group['2'].dropdown_toggle('passwords')),
+        Key([mod], "u", lazy.group['2'].dropdown_toggle('drive')),
         #Key([mod], "m", lazy.group['2'].dropdown_toggle('mail')),
         KeyChord([mod], "g",
                  [Key([], "p", lazy.group['2'].dropdown_toggle('githubPush')),

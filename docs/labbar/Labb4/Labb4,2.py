@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 ### UPPGIFT 4A ###
-from multiprocessing.sharedctypes import Value
 from budskap import *
 
 alphabet_lower_case = "abcdefghijklmnopqrstuvwxyzåäö"
@@ -38,6 +37,7 @@ def converter(expression, interpretation):
 NOT_counter = 0
 NOT_index = 0
 NOT_position = 0
+
 def NOT(converted_expression):
     for element in converted_expression:
         NOT_index += 1
@@ -83,11 +83,12 @@ def boolean_element(expression):
     
 def interpret(expression, interpretation):
     converted_expression = converter(expression, interpretation)
-    print(converted_expression)
-    
-   
+    return converted_expression
 
 interpret([["NOT",["NOT", "door_open"]], "AND", "cat_gone"], 
                {"door_open" : "false", "cat_gone" : "true", "cat_asleep" : "true"})
 
+print(converter([["NOT",["NOT", "door_open"]], "AND", "cat_gone"], 
+               {"door_open" : "false", "cat_gone" : "true", "cat_asleep" : "true"}))
 
+print(NOT([['NOT', ['NOT', 'false']], 'AND', 'true']))
