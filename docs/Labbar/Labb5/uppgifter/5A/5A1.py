@@ -27,5 +27,5 @@ def cvimg_to_list(lst):
             img[y, x, 2] = pixel[2]
 
     return img
-
+x = 0
 cvimg_to_list(img)
