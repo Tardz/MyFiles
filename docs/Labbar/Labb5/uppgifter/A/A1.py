@@ -2,7 +2,7 @@ import sys
 sys.path.append("/home/jonalm/docs/Labbar/Labb5/lib/python3.10/site-packages/")
 
 import numpy as np
-import cv2 as cv
+import cv2
 
 def rgblist_to_cvimg(lst, height, width):
     """Return a width x height OpenCV image with specified pixels."""
@@ -28,9 +28,10 @@ def cvimg_to_list(lst):
 
     return python_lst
 
-img = cv.imread("/home/jonalm/docs/Labbar/Labb5/images/flowers.jpg")
-list_img = cvimg_to_list(img)
-converted_img = rgblist_to_cvimg(list_img, img.shape[0], img.shape[1])
-print(converted_img)
-cv.imshow("converted", converted_img)
-cv.waitKey(1000)
+# img = cv2.imread("/home/jonalm/docs/Labbar/Labb5/images/flowers.jpg")
+
+# list_img = cvimg_to_list(img)
+# converted_img = rgblist_to_cvimg(list_img, img.shape[0], img.shape[1])
+
+# cv2.imshow("converted", converted_img)
+# cv2.waitKey(1000)

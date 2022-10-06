@@ -2,7 +2,7 @@ import sys
 sys.path.append("/home/jonalm/docs/Labbar/Labb5/lib/python3.10/site-packages/")
 
 import numpy as np
-import cv2 as cv
+import cv2 
 
 def G(y, x, s = 4.5):
     """
@@ -31,8 +31,8 @@ def unsharp_mask(N):
     
     return array
 
-img = cv.imread("/home/jonalm/docs/Labbar/Labb5/images/flowers_to_greyscale.jpg")
-kernel = np.array(unsharp_mask(100))
-filtered_img = cv.filter2D(img, -1, kernel)
-cv.imshow("sharp_flowers", filtered_img)
-cv.waitKey(0)
+# img = cv2.imread("/home/jonalm/docs/Labbar/Labb5/images/flowers.jpg")
+# kernel = np.array(unsharp_mask(100))
+# filtered_img = cv2.filter2D(img, -1, kernel)
+# cv2.imshow("sharp_flowers", filtered_img)
+# cv2.waitKey(0)
