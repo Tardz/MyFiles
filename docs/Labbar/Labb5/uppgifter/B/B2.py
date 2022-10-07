@@ -8,7 +8,7 @@ from A.A1 import cvimg_to_list
 from cvlib import rgblist_to_cvimg
 
 def generator_from_image(img):
-    """Returns a func which returns the color of a given index"""
+    """Returns a func which returns the color of a pixel in a img with given index"""
     
     return (
         lambda index: img[index] 
