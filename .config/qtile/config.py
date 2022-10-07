@@ -114,6 +114,7 @@ groups.append(ScratchPad('2', [
     DropDown('drive', '/home/jonalm/.webcatalog/GoogleDrive/GoogleDrive', warp_pointer=True, width=0.6, height=0.7, x=0.2, y=0.12, opacity=1),
     #DropDown('mail', 'thunderbird', warp_pointer=True, width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
     DropDown('github', '/home/jonalm/.webcatalog/GitHub/GitHub', warp_pointer=True, width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
+    DropDown('githubPushLabb', '/home/jonalm/scripts/term/gitpushlabb.sh', warp_pointer=True, width=0.6, height=0.7, x=0.2, y=0.12, opacity=0.95),
     DropDown('githubPush', '/home/jonalm/scripts/term/gitpush.sh', warp_pointer=True, width=0.4, height=0.4, x=0.3, y=0.25, opacity=1)
 ]))
 
@@ -136,7 +137,8 @@ for i in groups:
         #Key([mod], "m", lazy.group['2'].dropdown_toggle('mail')),
         KeyChord([mod], "g",
                  [Key([], "p", lazy.group['2'].dropdown_toggle('githubPush')),
-                  Key([], "g", lazy.group['2'].dropdown_toggle('github'))]),
+                  Key([], "g", lazy.group['2'].dropdown_toggle('github')),
+                  Key([], "o", lazy.group['2'].dropdown_toggle('githubPushLabb'))]),
 
     ])
 
