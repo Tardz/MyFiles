@@ -1,4 +1,6 @@
 """cvlib module, helper functions for image and tuple manipulation."""
+import sys
+sys.path.append("/home/jonalm/docs/Labbar/Labb5/lib/python3.10/site-packages/")
 
 import cv2
 import numpy
