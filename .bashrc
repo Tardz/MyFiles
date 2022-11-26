@@ -1,4 +1,6 @@
 # ~/.bashrc
+### PATHS ###
+export PYTHONPATH=$PYTHONPATH:/home/jonalm/docs/tdde25-2022-projekt-sg3-08/lib/python3.10/site-packages
 
 ### DEFAULT ###
 [[ $- != *i* ]] && return
